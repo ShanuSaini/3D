@@ -13,6 +13,14 @@ var controls = new THREE.OrbitControls( camera, renderer.domElement );
 
 /* Create the shape */
 var geometry = new THREE.BoxGeometry(1,1,1);
+// var cubeMaterials = [
+//     new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader.load('images/1.jpg'), side: THREE.DoubleSide }),
+//     new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader.load('images/1.jpg'), side: THREE.DoubleSide }),
+//     new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader.load('images/1.jpg'), side: THREE.DoubleSide }),
+//     new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader.load('images/1.jpg'), side: THREE.DoubleSide }),
+//     new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader.load('images/1.jpg'), side: THREE.DoubleSide }),
+//     new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader.load('images/1.jpg'), side: THREE.DoubleSide })
+// ];
 
 /* Create a material, color or image texture */
 var material = new THREE.MeshBasicMaterial({color: 0xFFFFFF, wireframe: true});
