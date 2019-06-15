@@ -26,16 +26,34 @@ var cubeMaterials = [
 var material = new THREE.MeshFaceMaterial(cubeMaterials);
 var cube = new THREE.Mesh(geometry,material);
 scean.add(cube);
+cube.rotation.x = .5;
+cube.rotation.y = .8;
 
 camera.position.z = 3;
 
-var ambientLight = new THREE.AmbientLight(0xffffff, 2.0);
-scean.add(ambientLight)
+var ambientLight = new THREE.AmbientLight(0xffffff, .2);
+scean.add(ambientLight);
+
+var pointLightOne = new THREE.PointLight(0xffffff, 1, 100);
+scean.add(pointLightOne);
+
+var pointLightTwo = new THREE.PointLight(0xff0000, .5, 100);
+scean.add(pointLightTwo);
+
 
 /* Game Logic */
 var update = function(){
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.005;
+    // cube.rotation.x += 0.01;
+    // cube.rotation.y += 0.005;
+
+    var time = Date.now() * 0.0005;
+    pointLightOne.position.x = Math.sin(time * .7) * 30;
+    pointLightOne.position.y = Math.cos(time * .5) * 40;
+    pointLightOne.position.z = Math.cos(time * .3) * 30;
+
+    pointLightTwo.position.x = Math.sin(time * .7) * 30;
+    pointLightTwo.position.y = Math.cos(time * .5) * 40;
+    pointLightTwo.position.z = Math.cos(time * .3) * 30;
 }
 
 /* Draw Scean */
