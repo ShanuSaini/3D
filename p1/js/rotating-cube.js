@@ -14,12 +14,12 @@ var controls = new THREE.OrbitControls( camera, renderer.domElement );
 /* Create the shape */
 var geometry = new THREE.BoxGeometry(1,1,1);
 var cubeMaterials = [
-    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('images/1.jpg'), side: THREE.DoubleSide }),  // Right 
-    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('images/1.jpg'), side: THREE.DoubleSide }),  // Left
-    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('images/1.jpg'), side: THREE.DoubleSide }),  // Top
-    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('images/1.jpg'), side: THREE.DoubleSide }),  // Bottom
-    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('images/1.jpg'), side: THREE.DoubleSide }),  // Front
-    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('images/1.jpg'), side: THREE.DoubleSide })   // Back
+    new THREE.MeshLambertMaterial({ map: new THREE.TextureLoader().load('images/1.jpg'), side: THREE.DoubleSide }),  // Right 
+    new THREE.MeshLambertMaterial({ map: new THREE.TextureLoader().load('images/1.jpg'), side: THREE.DoubleSide }),  // Left
+    new THREE.MeshLambertMaterial({ map: new THREE.TextureLoader().load('images/1.jpg'), side: THREE.DoubleSide }),  // Top
+    new THREE.MeshLambertMaterial({ map: new THREE.TextureLoader().load('images/1.jpg'), side: THREE.DoubleSide }),  // Bottom
+    new THREE.MeshLambertMaterial({ map: new THREE.TextureLoader().load('images/1.jpg'), side: THREE.DoubleSide }),  // Front
+    new THREE.MeshLambertMaterial({ map: new THREE.TextureLoader().load('images/1.jpg'), side: THREE.DoubleSide })   // Back
 ];
 
 /* Create a material, color or image texture */
@@ -28,6 +28,9 @@ var cube = new THREE.Mesh(geometry,material);
 scean.add(cube);
 
 camera.position.z = 3;
+
+var ambientLight = new THREE.AmbientLight(0xffffff, 2.0);
+scean.add(ambientLight)
 
 /* Game Logic */
 var update = function(){
