@@ -9,6 +9,8 @@ var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHei
 var renderer = new THREE.WebGLRenderer({canvas});
 renderer.setSize(window.innerWidth, window.innerHeight);
 
+var controls = new THREE.OrbitControls( camera, renderer.domElement );
+
 /* Create the shape */
 var geometry = new THREE.BoxGeometry(1,1,1);
 
